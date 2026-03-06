@@ -1,0 +1,11 @@
+streamlit
+folium
+streamlit-folium
+sentinelhub
+python-dotenv
+pillow
+numpy
+opencv-python
+transformers
+torch
+requests

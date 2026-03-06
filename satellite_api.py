@@ -5,11 +5,19 @@ from sentinelhub import (
 import datetime, math
 from PIL import Image
 import numpy as np
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 # ── Credentials ───────────────────────────────────────────────────────────────
+# IMPORTANT: Set these as environment variables or in a .env file
+# Never commit credentials to GitHub!
+
 config = SHConfig()
-config.sh_client_id     = 'db24332e-0f29-4d9f-bc66-caebb37d660d'
-config.sh_client_secret = 'DwxFo8c4WMqT6jNooTAsSJ7X7SyHNQZv'
+config.sh_client_id     = os.getenv('SH_CLIENT_ID', 'YOUR_CLIENT_ID_HERE')
+config.sh_client_secret = os.getenv('SH_CLIENT_SECRET', 'YOUR_CLIENT_SECRET_HERE')
 
 # ── Evalscripts ───────────────────────────────────────────────────────────────
 _OPTICAL_EVALSCRIPT = """
