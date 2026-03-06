@@ -1,9 +1,14 @@
 import google.generativeai as genai
 import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # --- 1. CONFIGURE GEMINI ---
-# Put your API key here (in a real app, use environment variables!)
-genai.configure(api_key="AIzaSyDZuZaIIA-dKcUqEt2j0XmbEO0NJMig0r0")
+# IMPORTANT: Never commit API keys to GitHub!
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'YOUR_GEMINI_API_KEY_HERE')
+genai.configure(api_key=GEMINI_API_KEY)
 
 # Use the multimodal Flash model for speed
 model = genai.GenerativeModel('gemini-1.5-flash')
